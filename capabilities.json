@@ -1,0 +1,8 @@
+{
+    "appium:platformName": "Android",
+    "appium:automationName": "UiAutomator2",
+    "appium:appPackage": "com.flipkart.android",
+    "appium:appActivity": "com.flipkart.android.SplashActivity",
+    "appium:autoGrantPermissions": true,
+    "appium:noReset": true
+}

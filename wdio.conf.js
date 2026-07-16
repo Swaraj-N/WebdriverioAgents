@@ -1,9 +1,6 @@
 const path = require('path');
 const allure = require('allure-commandline');
 const fs = require('fs');
-// const configureIPScreen = require('./test/screenObjects/configureIP.screen')
-// const Profilescreen = require('./test/screenObjects/profile.screen')
-// const testData = require('./test/testData/data')
 
 
 exports.config = {
@@ -32,19 +29,9 @@ exports.config = {
     //
     specs:
         ['./test/specs/**/*.js'],
-    // ['./test/specs/TC_Bagging_07.js'],
     // Patterns to exclude.
     suites: {
-        // loginScreen:["./test/specs/TC_Login_03.js","./test/specs/TC_Login_04.js","./test/specs/TC_Login_05.js"],
-        loginScreen: ["./test/specs/TC_Login_05.js"],
-        homeScreen: ["./test/specs/TC_Home_01.js", "./test/specs/TC_Home_02.js", "./test/specs/TC_Home_03_1.js",
-            "./test/specs/TC_Home_03.js", "./test/specs/TC_Home_04.js", "./test/specs/TC_Home_05.js"],
-        baggingScreen: ["./test/specs/TC_Bagging_01.js", "./test/specs/TC_Bagging_03.js", "./test/specs/TC_Bagging_02.js",
-            "./test/specs/TC_Bagging_04.js", "./test/specs/TC_Bagging_05.js", "./test/specs/TC_Bagging_06.js",
-            "./test/specs/TC_Bagging_07.js", "./test/specs/TC_Bagging_08.js"],
-        searchingScreen: ["./test/specs/TC_E2E_01_searching.js"],
-        errorScreen: [],
-        moreScreen: ["./test/specs/TC_Editconfiguration_09.js"]
+        loginScreen: ["./test/specs/TC_Login.spec.js"],
     },
     exclude: [
         // 'path/to/excluded/files'
@@ -72,33 +59,25 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
 
-    /*   Device Names
-      Pixel_2_V12
-  Pixel_2_V8 */
 
     capabilities: [
-        // {
-        //     "appium:platformName": "Android",
-        //     "appium:deviceName": "Pixel_2_V8",
-        //     "appium:automationName": "UIAutomator2",
-        //     "appium:platformVersion": "8.0",
-        //     "appium:app": path.join(process.cwd(), "./app/android/bundl-v4.apk"),
-        //     "appium:autoGrantPermissions": true,
-        //     "appium:unicodeKeyboard ": true,
-        //     "appium:resetKeyboard": true
-        // }
-        // ,
         {
             "appium:platformName": "Android",
             "appium:automationName": "UiAutomator2",
-            "appium:app": path.join(process.cwd(), "./app/android/webdriverio.apk"),
-            // "appium:appPackage":"com.mobile.ConnectLife",
-            // "appium:appActivity":"com.example.sbiassistedonlinepolicyselling.Startup_PageActivity",
-            "appium:autoGrantPermissions": true,
-            "appium:unicodeKeyboard": true,
-            "appium:resetKeyboard": true,
+            'appium:appPackage': 'com.flipkart.android',
+            'appium:appActivity': 'com.flipkart.android.SplashActivity',
             "appium:noReset": true
         }
+        // {
+        //     "appium:platformName": "Android",
+        //     "appium:automationName": "UiAutomator2",
+        //     "appium:appPackage": "in.amazon.mShop.android.shopping",
+        //     "appium:appActivity": "com.amazon.mShop.splashscreen.StartupActivity",
+        //     "appium:autoGrantPermissions": true,
+        //     "appium:unicodeKeyboard": true,
+        //     "appium:resetKeyboard": true,
+        //     "appium:noReset": true
+        // }
     ],
     //
     // ===================

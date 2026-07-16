@@ -1,1 +1,4 @@
 node_modules
+android_execution_report
+allure-results
+wdio-appium.log

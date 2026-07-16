@@ -1,17 +1,11 @@
 {
-  "name": "bundl_automation",
+  "name": "WebdriverioAgents",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./wdio.conf.js",
-    "Login": "npx wdio run ./wdio.conf.js --suite loginScreen",
-    "Home": "npx wdio run ./wdio.conf.js --suite homeScreen",
-    "Searching": "npx wdio run ./wdio.conf.js --suite searchingScreen",
-    "Bagging": "npx wdio run ./wdio.conf.js --suite baggingScreen",
-    "Errorscreen": "npx wdio run ./wdio.conf.js --suite errorScreen",
-    "More": "npx wdio run ./wdio.conf.js --suite moreScreen"
+    "Login": "npx wdio run ./wdio.conf.js --suite loginScreen"
   },
   "keywords": [],
   "author": "Swaraj",
@@ -39,6 +33,7 @@
     "webdriverio": "^8.3.11"
   },
   "dependencies": {
+    "@wdio/mcp": "^3.10.1",
     "axios": "^1.7.7"
   }
 }
