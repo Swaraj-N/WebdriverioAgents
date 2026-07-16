@@ -1,7 +1,0 @@
-{
-    "chat.mcp.serverSampling": {
-        "WebdriverioAgents/.vscode/mcp.json: wdio-mcp": {
-            "allowedModels": []
-        }
-    }
-}

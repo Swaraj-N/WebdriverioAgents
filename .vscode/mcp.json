@@ -4,8 +4,7 @@
       "disabled": false,
       "timeout": 100,
       "type": "stdio",
-      "command": "npx",
-      "args": ["appium-mcp@latest"],
+      "command": "C:/Program Files/nodejs/appium-mcp.cmd",
       "env": {
         "ANDROID_HOME": "C:/Users/User/AppData/Local/Android/Sdk",
         "CAPABILITIES_CONFIG": "C:/Users/User/Desktop/WebdriverioAgents/capabilities.json"

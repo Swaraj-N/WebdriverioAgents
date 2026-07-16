@@ -31,7 +31,7 @@ exports.config = {
         ['./test/specs/**/*.js'],
     // Patterns to exclude.
     suites: {
-        loginScreen: ["./test/specs/TC_Login.spec.js"],
+        loginScreen: ["./test/specs/TC_Login.spec.js","./test/specs/TC_Flipkart.spec.js"],
     },
     exclude: [
         // 'path/to/excluded/files'
