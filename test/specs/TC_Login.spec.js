@@ -1,5 +1,5 @@
-const loginScreen = require('../screenObjects/Login.screen');
-const homeScreen = require('../screenObjects/home.screen');
+const loginScreen = require('../screenObjects/wdiodemo.Login.screen');
+const homeScreen = require('../screenObjects/wdiodemo.home.screen');
 const testData = require('../testData/data')
 
 describe('Login Scenario', () => {
