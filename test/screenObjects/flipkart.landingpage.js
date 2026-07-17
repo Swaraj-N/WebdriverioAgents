@@ -1,4 +1,5 @@
-import { $, browser } from '@wdio/globals'
+import { $ } from '@wdio/globals'
+import allure from '../genericUtility/allureUtility.js';
 // import {expect} from 'chai';
 
 class LandingPage {
@@ -16,17 +17,26 @@ class LandingPage {
     }
 
     async grantLocationPermissionAndClickSkipBtn() {
-        await browser.waitUntil(async () => await this.grantLocationOption.isDisplayed(), {
-            timeout: 5000,
-            timeoutMsg: 'Grant location option not displayed'
-        });
-        await this.grantLocationOption.click();
-        await this.skipBtn.click();
+        if(await this.grantLocationOption.isDisplayed({timeout: 5000})) {
+            await this.grantLocationOption.click();
+            await allure.stepLevelLog('Location permission granted');
+        }
+        else{
+        await allure.stepLevelLog('Location permission popup not displayed');
+}
+        if(await this.skipBtn.isDisplayed({timeout: 5000})) {
+            await this.skipBtn.click();
+            await allure.stepLevelLog('Clicked on Skip button');
+        }
+        else{
+        await allure.stepLevelLog('Skip button not displayed');
+        }
+        
     }
     
     async clickFlipkartBanner() {
-        // expect(await this.flipkartBanner.isDisplayed({timeout: 5000}));
         await this.flipkartBanner.click();
+        await allure.stepLevelLog('Clicked on Flipkart banner');
     }
 
 }

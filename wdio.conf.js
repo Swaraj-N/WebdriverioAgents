@@ -66,7 +66,7 @@ exports.config = {
             "appium:automationName": "UiAutomator2",
             'appium:appPackage': 'com.flipkart.android',
             'appium:appActivity': 'com.flipkart.android.SplashActivity',
-            "appium:noReset": true
+            "appium:noReset": false
         }
         // {
         //     "appium:platformName": "Android",
