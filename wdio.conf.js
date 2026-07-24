@@ -31,7 +31,7 @@ exports.config = {
         ['./test/specs/**/*.js'],
     // Patterns to exclude.
     suites: {
-        loginScreen: ["./test/specs/TC_Login.spec.js","./test/specs/TC_Flipkart.spec.js"],
+        loginScreen: ["./test/specs/TC_Login.spec.js", "./test/specs/TC_Flipkart.spec.js"],
     },
     exclude: [
         // 'path/to/excluded/files'
@@ -61,11 +61,17 @@ exports.config = {
 
 
     capabilities: [
+        // {
+        //     "appium:platformName": "Android",
+        //     "appium:automationName": "UiAutomator2",
+        //     'appium:appPackage': 'com.flipkart.android',
+        //     'appium:appActivity': 'com.flipkart.android.SplashActivity',
+        //     "appium:noReset": false
+        // }
         {
-            "appium:platformName": "Android",
-            "appium:automationName": "UiAutomator2",
-            'appium:appPackage': 'com.flipkart.android',
-            'appium:appActivity': 'com.flipkart.android.SplashActivity',
+            "appium:platformName": "windows",
+            "appium:automationName": "windows",
+            "appium:app": "C:\\Users\\User\\Desktop\\ninza_hrm_Desktop\\Ninza-HRM.exe",
             "appium:noReset": false
         }
         // {
@@ -126,8 +132,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: [
-        ['appium', {
+  /*    ['appium', {
 
             args: {
                 address: 'localhost',
@@ -135,8 +140,11 @@ exports.config = {
 
             },
             logPath: './'
-        }]
-    ],
+        }], */
+        services:['appium'],
+    // services: ['winappdriver',{
+    //     command: 'C:\\Program Files (x86)\\Windows Application Driver\\WinAppDriver.exe',
+    // }],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -325,8 +333,8 @@ exports.config = {
         const reportError = new Error('Could not generate Allure report');
         const now = new Date();
         const timestamp = `${now.getDate()}-${(now.getMonth() + 1)}-${now.getFullYear()}_${now.getHours()}-${now.getMinutes()}`;
-        const reportDir = 'android_execution_report';
-        const reportFile = `AndroidExecution_Report_${timestamp}.html`;
+        const reportDir = 'execution_report';
+        const reportFile = `Execution_Report_${timestamp}.html`;
         const generation = allure(['generate', '--single-file', 'allure-results', '--clean', '--output', reportDir]);
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(

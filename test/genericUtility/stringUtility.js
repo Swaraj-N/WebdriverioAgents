@@ -59,6 +59,14 @@ class StringUtility {
     async jsonObjectToString(jsonObject) {
       return JSON.stringify(jsonObject);
     }
+
+    /**
+     * @description This method is used to generate a random number within a specified count
+     * @author SWARAJ <swaraj.t@testyantra.com>
+     */
+    async randomNumber(count) {
+      return Math.floor(Math.random() * (10000*count));
+    }
   
   }
   module.exports = new StringUtility();

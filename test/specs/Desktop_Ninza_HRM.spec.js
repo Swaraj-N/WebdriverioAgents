@@ -1,0 +1,17 @@
+const { default: ninzaHrmLoginpage } = require('../screenObjects/ninzaHrm.loginpage');
+const { default: ninzaHrmWelcomePage } = require('../screenObjects/ninzaHrm.Welcomepage');
+const { default: ninzaHrmProjectPage } = require('../screenObjects/ninzaHrm.Projectspage');
+const { default: stringUtility } = require('../genericUtility/stringUtility');
+const { projectManager } = require('../testData/data');
+require('dotenv').config({path:'./.env'});
+describe('Desktop Automation', () => {
+    it('Login to Application and Create a project', async () => {
+        console.log("Username is: "+process.env.APPUSERNAME);
+        console.log("Password is: "+process.env.APPPASSWORD);
+        await ninzaHrmLoginpage.loginToApplication(process.env.APPUSERNAME, process.env.APPPASSWORD);
+        await ninzaHrmWelcomePage.verifyNinzaHRMTitle();
+        await ninzaHrmWelcomePage.clickOnProjectsLink();
+        let projectName = `TestProject${await stringUtility.randomNumber(150, 1000)}`;
+        await ninzaHrmProjectPage.createProjectwithStatus(projectName, projectManager.projectManagerName, "Created");
+    });
+})
