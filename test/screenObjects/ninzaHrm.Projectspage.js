@@ -63,6 +63,13 @@ class HrmProjectPage{
         allure.addStep(`${projectManager} is entered in Project Manager text box`);
         await browser.pause(2000);
         await this.projectStatusDropdown.click();
+        if (status === "Created") {
+            await this.statusCreated.click();
+        }else if (status === "On Going") {
+            await this.statusOnGoing.click();
+        }else if (status === "Completed") {
+            await this.statusCompleted.click();
+        }
         await this.statusCreated.click();
         allure.addStep(`${status} is selected from Project Status dropdown`);
         await this.addProjectBtn.click();
