@@ -8,7 +8,7 @@ class HrmProjectPage{
 
 
     get createProjectBtn(){
-        return $("//*[contains(@Name,'Create Project')]");
+        return $("//*[@Name='Create Project']");
         }
 
     get projectsLink(){
@@ -16,11 +16,11 @@ class HrmProjectPage{
     }
 
     get projectNameTxt(){
-        return $("(//*[@Name='Project Name']/following-sibling::edit)[1]");
+        return $("(//*[@Name='Project Name']/following-sibling::*[@LocalizedControlType='edit'])[1]");
     }
 
      get projectManagerTxt(){
-        return $("(//*[@Name='Project Manager']/following-sibling::edit)[1]");
+        return $("(//*[@Name='Project Manager']/following-sibling::*[@LocalizedControlType='edit'])[1]");
     }
 
     get projectStatusDropdown(){
@@ -53,24 +53,15 @@ class HrmProjectPage{
         });
         await this.createProjectBtn.click();
         allure.addStep("Clicked on Create Project button");
-        await browser.waitUntil(async () => (await this.projectNameTxt.isDisplayed()) === true, {
-            timeout: 5000,
-            timeoutMsg: `${allure.addStep("Project Name text box is not displayed")}`
-        });
+        await browser.pause(2000);
         await this.projectNameTxt.click();
         await this.projectNameTxt.setValue(projectName);
         allure.addStep(`${projectName} is entered in Project Name text box`);
-          await browser.waitUntil(async () => (await this.projectManagerTxt.isDisplayed()) === true, {
-            timeout: 5000,
-            timeoutMsg: `${allure.addStep("Project Manager text box is not displayed")}`
-        });
+        await browser.pause(2000);
         await this.projectManagerTxt.click();
         await this.projectManagerTxt.setValue(projectManager);
         allure.addStep(`${projectManager} is entered in Project Manager text box`);
-        await browser.waitUntil(async () => (await this.projectStatusDropdown.isDisplayed()) === true, {
-            timeout: 5000,
-            timeoutMsg: `${allure.addStep("Project Status dropdown is not displayed")}`
-        });
+        await browser.pause(2000);
         await this.projectStatusDropdown.click();
         await this.statusCreated.click();
         allure.addStep(`${status} is selected from Project Status dropdown`);

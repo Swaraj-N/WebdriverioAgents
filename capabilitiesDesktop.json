@@ -1,8 +1,7 @@
 {
     "appium:platformName": "Android",
     "appium:automationName": "UiAutomator2",
-    "appium:app": "com.flipkart.android",
-    "appium:appActivity": "com.flipkart.android.SplashActivity",
+     "appium:app": "C:\\Users\\User\\Desktop\\ninza_hrm_Desktop\\Ninza-HRM.exe",
     "appium:autoGrantPermissions": true,
     "appium:noReset": false
 }

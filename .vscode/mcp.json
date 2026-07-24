@@ -9,6 +9,16 @@
         "ANDROID_HOME": "C:/Users/User/AppData/Local/Android/Sdk",
         "CAPABILITIES_CONFIG": "C:/Users/User/Desktop/WebdriverioAgents/capabilities.json"
       }
+    },
+    "desktop-mcp": {
+      "disabled": false,
+      "timeout": 100,
+      "type": "stdio",
+      "command": "C:/Program Files/nodejs/appium-mcp.cmd",
+      "env": {
+        "ANDROID_HOME": "C:/Users/User/AppData/Local/Android/Sdk",
+        "CAPABILITIES_CONFIG": "C:/Users/User/Desktop/WebdriverioAgents/capabilitiesDesktop.json"
+      }
     }
   }
 }
